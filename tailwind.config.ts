@@ -15,11 +15,16 @@ const config: Config = {
         },
         black: {
           DEFAULT: "#000000",
-          light: "#101010",
+          dark: "#101010",
+          light: "#191919",
         },
         gray: {
+          extraDark: "#979797",
           dark: "#F1F1F1",
           light: "#FAFAFA",
+        },
+        white: {
+          DEFAULT: "#FFFFFF",
         },
       },
       fontSize: {

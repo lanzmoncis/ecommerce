@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const NavLinks = () => {
   return (
-    <div className="px-[24px] flex items-center">
+    <div className="px-6 flex items-center">
       <div className="flex grow">
         <div>
           <Menu color="#ffffff" />

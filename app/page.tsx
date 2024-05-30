@@ -1,5 +1,7 @@
-import { Hero } from "@/components/hero";
 import { promises as fs } from "fs";
+
+import { Hero } from "@/components/hero";
+import { SectionNav } from "@/components/section-nav";
 
 export default async function Home() {
   const file = await fs.readFile(
@@ -12,6 +14,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <SectionNav />
     </>
   );
 }

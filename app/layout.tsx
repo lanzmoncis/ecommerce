@@ -3,7 +3,7 @@ import { Manrope as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 
-import { Footer } from "../components/ui/footer";
+import { Footer } from "../components/sections/footer";
 
 import "./globals.css";
 

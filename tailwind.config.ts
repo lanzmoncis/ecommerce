@@ -28,6 +28,14 @@ const config: Config = {
         },
       },
       fontSize: {
+        "custom-title-text": [
+          "36px",
+          {
+            lineHeight: "40px",
+            letterSpacing: "1.29px",
+            fontWeight: "700",
+          },
+        ],
         "custom-4xl": [
           "56px",
           {

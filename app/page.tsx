@@ -1,20 +1,13 @@
-import { promises as fs } from "fs";
-
-import { Hero } from "@/components/hero";
-import { SectionNav } from "@/components/section-nav";
+import { Hero } from "@/components/sections/hero";
+import { SectionNav } from "@/components/sections/section-nav";
+import { FeaturedProducts } from "@/components/sections/featured-products";
 
 export default async function Home() {
-  const file = await fs.readFile(
-    process.cwd() + "/app/_data/data.json",
-    "utf8"
-  );
-
-  const { products } = JSON.parse(file);
-
   return (
     <>
       <Hero />
       <SectionNav />
+      <FeaturedProducts />
     </>
   );
 }

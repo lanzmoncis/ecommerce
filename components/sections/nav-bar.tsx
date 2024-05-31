@@ -1,4 +1,4 @@
-import { NavLinks } from "./nav-links";
+import { NavLinks } from "../ui/nav-links";
 
 export const NavBar = () => {
   return (

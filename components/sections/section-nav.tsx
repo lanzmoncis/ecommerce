@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -14,11 +15,12 @@ export const SectionNav = () => {
           className="-mt-20"
         />
         <div className="flex flex-col gap-2 items-center">
-          <h3 className="block text-custom-base font-bold tracking-[1.07px] uppercase">
+          <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase">
             Headphones
           </h3>
-          <Button variant="ghost" size="sm">
-            shop
+          <Button variant="ghost" size="sm" className="flex gap-1">
+            <div>shop</div>
+            <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
           </Button>
         </div>
       </div>
@@ -32,11 +34,12 @@ export const SectionNav = () => {
           className="-mt-20"
         />
         <div className="flex flex-col gap-2 items-center">
-          <h3 className="block text-custom-base font-bold tracking-[1.07px] uppercase ">
+          <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase ">
             Speakers
           </h3>
-          <Button variant="ghost" size="sm">
-            shop
+          <Button variant="ghost" size="sm" className="flex gap-1">
+            <div>shop</div>
+            <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
           </Button>
         </div>
       </div>
@@ -50,11 +53,12 @@ export const SectionNav = () => {
           className=" -mt-16"
         />
         <div className="flex flex-col gap-2 items-center mb-4">
-          <h3 className="block text-custom-base font-bold tracking-[1.07px] uppercase">
+          <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase">
             Earphones
           </h3>
-          <Button variant="ghost" size="sm">
-            shop
+          <Button variant="ghost" size="sm" className="flex gap-1">
+            <div>shop</div>
+            <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
           </Button>
         </div>
       </div>

@@ -33,7 +33,7 @@ const config: Config = {
           {
             lineHeight: "40px",
             letterSpacing: "1.29px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-4xl": [
@@ -41,7 +41,7 @@ const config: Config = {
           {
             lineHeight: "58px",
             letterSpacing: "2px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-3xl": [
@@ -49,7 +49,7 @@ const config: Config = {
           {
             lineHeight: "44px",
             letterSpacing: "1.5px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-2xl": [
@@ -57,7 +57,7 @@ const config: Config = {
           {
             lineHeight: "36px",
             letterSpacing: "1.15px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-xl": [
@@ -65,7 +65,7 @@ const config: Config = {
           {
             lineHeight: "38px",
             letterSpacing: "2px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-lg": [
@@ -73,7 +73,7 @@ const config: Config = {
           {
             lineHeight: "33px",
             letterSpacing: "1.7px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-md": [
@@ -81,7 +81,7 @@ const config: Config = {
           {
             lineHeight: "24px",
             letterSpacing: "1.3px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-overline": [
@@ -97,7 +97,7 @@ const config: Config = {
           {
             lineHeight: "25px",
             letterSpacing: "1px",
-            fontWeight: "700",
+            fontWeight: "600",
           },
         ],
         "custom-base": [

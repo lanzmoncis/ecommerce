@@ -1,3 +1,5 @@
+"use client";
+
 import { NavLinks } from "../ui/nav-links";
 
 export const NavBar = () => {

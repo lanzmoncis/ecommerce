@@ -3,8 +3,6 @@ import { Manrope as FontSans } from "next/font/google";
 
 import { cn } from "@/lib/utils";
 
-import { Footer } from "../components/sections/footer";
-
 import "./globals.css";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
@@ -22,10 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("font-sans antialiased", fontSans.variable)}>
-        <div className="flex flex-col min-h-screen">
-          <main className="grow">{children}</main>
-          <Footer />
-        </div>
+        <main>{children}</main>
       </body>
     </html>
   );

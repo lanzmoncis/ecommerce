@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
@@ -5,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export const SectionNav = () => {
   return (
-    <section className="text-black max-w-[327px] mx-auto flex flex-col items-center gap-20 mb-24">
+    <section className="text-black max-w-[327px] mx-auto flex flex-col items-center justify-center gap-20 mb-24 md:flex-row md:max-w-[689px] md:gap-3">
       <div className="h-[165px] bg-gray-dark flex flex-col justify-center gap-2 items-center w-full rounded-lg">
         <Image
           src="/images/shared/desktop/image-category-thumbnail-headphones.png"

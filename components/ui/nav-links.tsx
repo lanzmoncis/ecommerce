@@ -1,9 +1,29 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, ShoppingCart } from "lucide-react";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
+
+const routes = [
+  {
+    href: "/",
+    name: "Home",
+  },
+  {
+    href: "/headphones",
+    name: "Headphones",
+  },
+  {
+    href: "/speakers",
+    name: "Speakers",
+  },
+  {
+    href: "/earphones",
+    name: "Earphones",
+  },
+];
 
 export const NavLinks = () => {
   const isExtraLargeScreens = useMediaQuery("(min-width: 1280px)");
@@ -26,18 +46,17 @@ export const NavLinks = () => {
           />
         </div>
         <ul className="hidden xl:flex gap-9 uppercase text-white text-custom-subtitle tracking-[2px]">
-          <li className="hover:text-orange cursor-pointer duration-300">
-            Home
-          </li>
-          <li className="hover:text-orange cursor-pointer duration-300">
-            Headphones
-          </li>
-          <li className="hover:text-orange cursor-pointer duration-300">
-            Speakers
-          </li>
-          <li className="hover:text-orange cursor-pointer duration-300">
-            Earphones
-          </li>
+          {routes.map((route, index) => (
+            <li key={index}>
+              <Link
+                href={route.href}
+                key={route.name}
+                className="hover:text-orange cursor-pointer duration-300"
+              >
+                {route.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div>

@@ -1,12 +1,18 @@
-import { SectionNav } from "@/components/sections/section-nav";
-import { CategoryHeader } from "@/components/sections/category-header";
-import { Footer } from "@/components/sections/footer";
-import { AboutSection } from "@/components/sections/about-section";
+import { SectionNav } from "@/components/shared/section-nav";
+import { CategoryHeader } from "@/components/shared/category-header";
+import { Footer } from "@/components/shared/footer";
+import { AboutSection } from "@/components/shared/about-section";
 
-const CategoryPage = () => {
+import { getProductsByCategory } from "@/lib/products";
+import { ProductList } from "@/components/shared/product-list";
+
+const CategoryPage = async ({ params }: { params: { category: string } }) => {
+  const productsByCategory = await getProductsByCategory(params.category);
+
   return (
     <>
       <CategoryHeader />
+      <ProductList products={productsByCategory} />
       <SectionNav />
       <AboutSection />
       <Footer />

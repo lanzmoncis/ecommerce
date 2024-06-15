@@ -6,9 +6,9 @@ import { Product } from "@/types/product-type";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 
-import { Button } from "./button";
-
 import { cn } from "@/lib/utils";
+
+import { Button } from "./button";
 
 interface ProductCardProps {
   product: Product;

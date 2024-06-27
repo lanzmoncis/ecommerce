@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { Product } from "@/types/product-type";
 
@@ -21,6 +22,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
   );
   const isExtraLargeScreens = useMediaQuery("(min-width: 1280px)");
 
+  const router = useRouter();
+
   return (
     <div
       className={cn(
@@ -38,13 +41,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
         }
         width={isMediumScreens ? 689 : isExtraLargeScreens ? 540 : 327}
         height={isExtraLargeScreens ? 560 : 352}
-        alt="Product category image"
+        alt={product.name}
         className="rounded-lg"
       />
       <div
         className={cn(
           "flex flex-col items-center gap-6 md:px-16 xl:justify-center xl:items-start",
-          index % 2 !== 0 && "md:px-0"
+          index % 2 !== 0 && "xl:px-0"
         )}
       >
         {product.new && (
@@ -57,12 +60,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
         </h2>
         <p
           className={cn(
-            "text-custom-base text-gray-500 text-center xl:text-left"
+            "text-custom-base text-gray-500 text-center xl:px-0 xl:text-left xl:w-5/6"
           )}
         >
           {product.description}
         </p>
-        <Button>See product</Button>
+        <Button
+          onClick={() => router.push(`/${product.category}/${product.slug}`)}
+        >
+          See product
+        </Button>
       </div>
     </div>
   );

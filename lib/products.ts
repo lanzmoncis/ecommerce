@@ -25,7 +25,20 @@ export const getProductsByCategory = async (
         new: product.new,
         category: product.category,
         categoryImage: product.categoryImage,
+        image: product.image,
+        cartQuantity: product.cartQuantity,
+        features: product.features,
+        includedItems: product.includedItems,
+        gallery: product.gallery,
+        others: product.others,
       };
     })
     .sort((a, b) => Number(b.new) - Number(a.new));
+};
+
+export const getProductBySlug = async (
+  slug: string
+): Promise<Product | undefined> => {
+  const products = await readData();
+  return products.find((product) => product.slug === slug);
 };

@@ -3,18 +3,18 @@ export interface Product {
   slug: string;
   name: string;
   shortName: string;
-  image?: CategoryImage;
+  image: CategoryImage;
   cartImage: string;
-  cartQuantity?: number;
+  cartQuantity: number;
   category: string;
   categoryImage: CategoryImage;
   new: boolean;
   price: number;
-  description?: string;
-  features?: string;
-  includedItems?: IncludedItem[];
-  gallery?: Gallery;
-  others?: Other[];
+  description: string;
+  features: string;
+  includedItems: IncludedItem[];
+  gallery: Gallery;
+  others: Other[];
 }
 
 export interface CategoryImage {

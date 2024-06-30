@@ -1,9 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 import { NavLinks } from "@/components/ui/nav-links";
 
 export const Hero = () => {
+  const router = useRouter();
+
   return (
     <header className="bg-black-light relative flex flex-col mb-24 h-[600px] md:h-[768px]">
       <div className="bg-[url('/images/home/mobile/image-header.jpg')] bg-cover bg-center bg-no-repeat w-full h-full absolute md:bg-[url('/images/home/tablet/image-header.jpg')] xl:bg-[url('/images/home/desktop/image-hero.jpg')]"></div>
@@ -22,7 +26,11 @@ export const Hero = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button>See product</Button>
+          <Button
+            onClick={() => router.push("/headphones/xx99-mark-two-headphones")}
+          >
+            See product
+          </Button>
         </div>
       </div>
     </header>

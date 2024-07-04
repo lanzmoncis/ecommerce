@@ -118,7 +118,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-[max-content_max-content] md:grid-rows-[max-content_max-content]">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-[max-content_max-content] md:grid-rows-[min-content_min-content] justify-center md:gap-4 xl:gap-6">
         <Image
           src={
             isMediumScreens
@@ -130,7 +130,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           alt="product first image"
           width={isMediumScreens ? 277 : isExtraLargeScreens ? 445 : 327}
           height={isExtraLargeScreens ? 280 : 174}
-          className="rounded-lg md:order-1"
+          className="rounded-lg md:order-1 md:mb-1 xl:mb-2"
         />
         <Image
           src={

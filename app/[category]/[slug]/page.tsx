@@ -3,7 +3,7 @@ import { Footer } from "@/components/shared/footer";
 import { ProductDetails } from "@/components/shared/product-details";
 import { SectionNav } from "@/components/shared/section-nav";
 import { GoBackLink } from "@/components/ui/back-link";
-import { NavLinks } from "@/components/ui/nav-links";
+import { Nav } from "@/components/shared/nav";
 
 import { getProductBySlug } from "@/lib/products";
 
@@ -16,7 +16,7 @@ export default async function SlugPage({
   return (
     <>
       <div className="bg-black mb-6">
-        <NavLinks />
+        <Nav />
       </div>
       <GoBackLink />
       <ProductDetails product={product} />

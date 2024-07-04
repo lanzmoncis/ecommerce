@@ -1,66 +1,85 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Menu, ShoppingCart } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ChevronRight } from "lucide-react";
 
-import { useMediaQuery } from "@/hooks/use-media-query";
-
-const routes = [
-  {
-    href: "/",
-    name: "Home",
-  },
-  {
-    href: "/headphones",
-    name: "Headphones",
-  },
-  {
-    href: "/speakers",
-    name: "Speakers",
-  },
-  {
-    href: "/earphones",
-    name: "Earphones",
-  },
-];
+import { Button } from "@/components/ui/button";
 
 export const NavLinks = () => {
-  const isExtraLargeScreens = useMediaQuery("(min-width: 1280px)");
-
+  const router = useRouter();
   return (
-    <div className="border-b border-[#979797]/30 px-6 py-8 mx-auto flex items-center md:px-0 md:max-w-[689px] xl:max-w-[1110px]">
-      <div className="flex grow md:justify-start md:gap-9 xl:gap-44">
-        {!isExtraLargeScreens && (
-          <div>
-            <Menu color="#ffffff" />
-          </div>
-        )}
-        <div className="mx-auto md:mx-0">
-          <Image
-            src="/images/shared/desktop/logo.svg"
-            height={25}
-            width={144}
-            alt="Audiophile logo"
-            priority
-          />
+    <div className="text-black max-w-[327px] mx-auto flex flex-col items-center justify-center gap-20 md:flex-row md:max-w-[689px] md:gap-3 xl:max-w-[1110px] xl:gap-7">
+      <div className="h-[165px] bg-gray-dark flex flex-col justify-center gap-2 items-center w-full rounded-lg xl:h-[204px]">
+        <Image
+          src="/images/shared/desktop/image-category-thumbnail-headphones.png"
+          alt="earphone"
+          width={150}
+          height={104}
+          className="-mt-20"
+        />
+        <div className="flex flex-col gap-2 items-center">
+          <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase xl:text-custom-md xl:tracking-[1.29px]">
+            Headphones
+          </h3>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="flex gap-1"
+            onClick={() => router.push("/headphones")}
+          >
+            <div>shop</div>
+            <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
+          </Button>
         </div>
-        <ul className="hidden xl:flex gap-9 uppercase text-white text-custom-subtitle tracking-[2px]">
-          {routes.map((route, index) => (
-            <li key={index}>
-              <Link
-                href={route.href}
-                key={route.name}
-                className="hover:text-orange cursor-pointer duration-300"
-              >
-                {route.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
-      <div>
-        <ShoppingCart color="#ffffff" />
+
+      <div className="h-[165px] bg-gray-dark flex flex-col justify-center gap-2 items-center w-full rounded-lg xl:h-[204px]">
+        <Image
+          src="/images/shared/desktop/image-category-thumbnail-speakers.png"
+          alt="earphone"
+          width={150}
+          height={104}
+          className="-mt-20"
+        />
+        <div className="flex flex-col gap-2 items-center">
+          <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase xl:text-custom-md xl:tracking-[1.29px]">
+            Speakers
+          </h3>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="flex gap-1"
+            onClick={() => router.push("/speakers")}
+          >
+            <div>shop</div>
+            <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
+          </Button>
+        </div>
+      </div>
+
+      <div className="h-[165px] bg-gray-dark flex flex-col justify-center gap-1 items-center w-full rounded-lg xl:h-[204px]">
+        <Image
+          src="/images/shared/desktop/image-category-thumbnail-earphones.png"
+          alt="earphone"
+          width={160}
+          height={104}
+          className="-mt-16"
+        />
+        <div className="flex flex-col gap-2 items-center mb-4">
+          <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase xl:text-custom-md xl:tracking-[1.29px]">
+            Earphones
+          </h3>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="flex gap-1"
+            onClick={() => router.push("/earphones")}
+          >
+            <div>shop</div>
+            <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
+          </Button>
+        </div>
       </div>
     </div>
   );

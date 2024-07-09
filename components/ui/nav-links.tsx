@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 export const NavLinks = () => {
   const router = useRouter();
   return (
-    <div className="text-black max-w-[327px] mx-auto flex flex-col items-center justify-center gap-20 md:flex-row md:max-w-[689px] md:gap-3 xl:max-w-[1110px] xl:gap-7">
+    <div className="text-black max-w-[327px] mx-auto flex flex-col items-center justify-center gap-20 w-full md:flex-row md:max-w-[689px] md:gap-3 xl:max-w-[1110px] xl:gap-7">
       <div className="h-[165px] bg-gray-dark flex flex-col justify-center gap-2 items-center w-full rounded-lg xl:h-[204px]">
         <Image
           src="/images/shared/desktop/image-category-thumbnail-headphones.png"

@@ -7,6 +7,8 @@ import { Plus, Minus } from "lucide-react";
 
 import { Product } from "@/types/product-type";
 
+import { useCartStore } from "@/store/cart-store";
+
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 import { Button } from "@/components/ui/button";
@@ -22,6 +24,8 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const isExtraLargeScreens = useMediaQuery("(min-width: 1280px)");
 
   const [quantity, setQuantity] = useState(1);
+
+  const setProducts = useCartStore((state) => state.setProducts);
 
   const router = useRouter();
 
@@ -84,7 +88,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
                 onClick={handleIncreaseQuantity}
               />
             </div>
-            <Button>Add to cart</Button>
+            <Button onClick={() => setProducts([product])}>Add to cart</Button>
           </div>
         </div>
       </div>

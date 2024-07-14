@@ -36,8 +36,8 @@ export const Nav = () => {
 
   return (
     <>
+      <CartModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       <div className="border-b border-[#979797]/30 px-6 py-8 mx-auto flex items-center md:px-0 md:max-w-[689px] xl:max-w-[1110px]">
-        <CartModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
         <div className="flex grow md:justify-start md:gap-9 xl:gap-44">
           {!isExtraLargeScreens && (
             <div>

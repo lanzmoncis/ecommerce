@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 import Facebook from "@/public/images/shared/desktop/icon-facebook.svg";
 import Twitter from "@/public/images/shared/desktop/icon-twitter.svg";
 import Instagram from "@/public/images/shared/desktop/icon-instagram.svg";
+
+import { routes } from "@/lib/links";
 
 export const Footer = () => {
   return (
@@ -17,18 +22,17 @@ export const Footer = () => {
             priority
           />
           <ul className="text-custom-subtitle text-white uppercase flex flex-col items-center gap-4 md:flex-row">
-            <li className="hover:text-orange cursor-pointer duration-300">
-              Home
-            </li>
-            <li className="hover:text-orange cursor-pointer duration-300">
-              Headphones
-            </li>
-            <li className="hover:text-orange cursor-pointer duration-300">
-              Speakers
-            </li>
-            <li className="hover:text-orange cursor-pointer duration-300">
-              Earphones
-            </li>
+            {routes.map((route, index) => (
+              <li key={index}>
+                <Link
+                  href={route.href}
+                  key={route.name}
+                  className="hover:text-orange cursor-pointer duration-300"
+                >
+                  {route.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="flex flex-col items-center gap-10 md:justify-between">

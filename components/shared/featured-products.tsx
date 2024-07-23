@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +12,8 @@ export const FeaturedProducts = () => {
     "(min-width: 768px) and (max-width: 1279px)"
   );
   const isExtraLargeScreens = useMediaQuery("(min-width: 1280px)");
+
+  const router = useRouter();
 
   return (
     <section className="max-w-[327px] mx-auto flex flex-col gap-6 mb-24 md:max-w-[689px] xl:max-w-[1110px]">
@@ -44,7 +47,10 @@ export const FeaturedProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button className="font-bold text-[13px] tracking-[1px] bg-black hover:bg-[#4C4C4C]">
+          <Button
+            className="font-bold text-[13px] tracking-[1px] bg-black hover:bg-[#4C4C4C]"
+            onClick={() => router.push("speakers/zx9-speaker")}
+          >
             see product
           </Button>
         </div>
@@ -52,7 +58,11 @@ export const FeaturedProducts = () => {
       <div className="h-[320px] bg-[url('/images/home/mobile/image-speaker-zx7.jpg')] bg-cover bg-no-repeat flex flex-col justify-center rounded-lg md:bg-[url('/images/home/tablet/image-speaker-zx7.jpg')] xl:bg-[url('/images/home/desktop/image-speaker-zx7.jpg')]">
         <div className="ml-6 space-y-8 md:ml-16 xl:ml-24">
           <h2 className="text-custom-xl uppercase">zx7 speaker</h2>
-          <Button variant="secondary" className="bg-white/0">
+          <Button
+            variant="secondary"
+            className="bg-white/0"
+            onClick={() => router.push("speakers/zx7-speaker")}
+          >
             see product
           </Button>
         </div>
@@ -62,7 +72,11 @@ export const FeaturedProducts = () => {
         <div className="h-[200px] flex flex-col justify-center bg-gray-dark rounded-lg md:h-[320px] md:w-[339px] xl:w-[540px]">
           <div className="ml-6 space-y-6 md:ml-16 xl:ml-24">
             <h2 className="text-custom-xl uppercase">yx1 earphones</h2>
-            <Button variant="secondary" className="bg-white/0">
+            <Button
+              variant="secondary"
+              className="bg-white/0"
+              onClick={() => router.push("earphones/yx1-earphones")}
+            >
               see product
             </Button>
           </div>

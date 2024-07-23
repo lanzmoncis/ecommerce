@@ -10,28 +10,12 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { NavLinks } from "@/components/ui/nav-links";
 import { CartModal } from "@/components/modals/cart-modal";
 
-const routes = [
-  {
-    href: "/",
-    name: "Home",
-  },
-  {
-    href: "/headphones",
-    name: "Headphones",
-  },
-  {
-    href: "/speakers",
-    name: "Speakers",
-  },
-  {
-    href: "/earphones",
-    name: "Earphones",
-  },
-];
+import { routes } from "@/lib/links";
 
 export const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+
   const isExtraLargeScreens = useMediaQuery("(min-width: 1280px)");
 
   return (

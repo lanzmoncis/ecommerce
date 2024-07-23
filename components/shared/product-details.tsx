@@ -25,7 +25,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   const [quantity, setQuantity] = useState(1);
 
-  const setProducts = useCartStore((state) => state.setProducts);
+  const addToCart = useCartStore((state) => state.addToCart);
 
   const router = useRouter();
 
@@ -76,19 +76,21 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             <div className="h-[48px] flex items-center bg-gray-dark gap-6 px-4 w-[120px]">
               <Minus
                 size={12}
-                strokeWidth={1.5}
+                strokeWidth={3}
+                color="#6b7280"
                 className="cursor-pointer"
                 onClick={handleDecreaseQuantity}
               />
               <span className="w-[16px] text-center">{quantity}</span>
               <Plus
                 size={12}
-                strokeWidth={1.5}
+                strokeWidth={3}
+                color="#6b7280"
                 className="cursor-pointer"
                 onClick={handleIncreaseQuantity}
               />
             </div>
-            <Button onClick={() => setProducts([product])}>Add to cart</Button>
+            <Button onClick={() => addToCart(product, quantity)}>Add to cart</Button>
           </div>
         </div>
       </div>

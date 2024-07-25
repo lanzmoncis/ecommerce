@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-export default function useFromStore<T, F>(
+export const useFromStore = <T, F>(
   store: (callback: (state: T) => unknown) => unknown,
   storeCallback: (state: T) => F
-) {
+) => {
   const [state, setState] = useState<F>();
 
   const stateOfStore = store(storeCallback) as F;
@@ -15,4 +15,4 @@ export default function useFromStore<T, F>(
   }, [stateOfStore]);
 
   return state;
-}
+};

@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 
-import { Modal } from "@/components/ui/modal";
+import { CustomModal } from "@/components/ui/custom-modal";
 import { Button } from "@/components/ui/button";
 
 import { useCartStore } from "@/store/cart-store";
 
-import useFromStore from "@/hooks/use-from-store";
+import { useFromStore } from "@/hooks/use-from-store";
 
 interface CartModalProps {
   isOpen: boolean;
@@ -16,6 +17,8 @@ interface CartModalProps {
 }
 
 export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
+  const router = useRouter();
+
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const increaseQuantity = useCartStore((state) => state.increaseQuantity);
   const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
@@ -27,7 +30,7 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
   );
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <CustomModal isOpen={isOpen} onClose={onClose}>
       {cart?.length === 0 ? (
         <div className="flex flex-col justify-center items-center gap-6 py-10 h-full w-full">
           <div className="text-gray-500 text-custom-md">Your cart is empty</div>
@@ -62,7 +65,9 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                   />
                   <div className="text-custom-base uppercase font-semibold">
                     <div className="mb-[1px]">{item.shortName}</div>
-                    <div className="text-gray-500">$ {item.price}</div>
+                    <div className="text-gray-500">
+                      $ {item.price.toLocaleString("en-US")}
+                    </div>
                   </div>
                 </div>
                 <div className="h-[32px] flex items-center bg-gray-dark gap-4 px-4 w-[96px]">
@@ -90,12 +95,16 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
           <div className="w-full space-y-7">
             <div className="flex justify-between w-full uppercase">
               <div className="text-gray-500">Total</div>
-              <div className="text-custom-md font-bold">$ {total}</div>
+              <div className="text-custom-md tacking-[0]">
+                $ {total?.toLocaleString("en-US")}
+              </div>
             </div>
-            <Button className="w-full">Checkout</Button>
+            <Button className="w-full" onClick={() => router.push("/checkout")}>
+              Checkout
+            </Button>
           </div>
         </div>
       )}
-    </Modal>
+    </CustomModal>
   );
 };

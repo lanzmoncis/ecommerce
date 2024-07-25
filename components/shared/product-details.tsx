@@ -71,7 +71,9 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           <p className="text-custom-base text-gray-500">
             {product.description}
           </p>
-          <div className="text-custom-md"> $ {product.price}</div>
+          <div className="text-custom-md">
+            $ {product.price.toLocaleString("en-US")}
+          </div>
           <div className="flex gap-x-6">
             <div className="h-[48px] flex items-center bg-gray-dark gap-6 px-4 w-[120px]">
               <Minus
@@ -90,7 +92,9 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
                 onClick={handleIncreaseQuantity}
               />
             </div>
-            <Button onClick={() => addToCart(product, quantity)}>Add to cart</Button>
+            <Button onClick={() => addToCart(product, quantity)}>
+              Add to cart
+            </Button>
           </div>
         </div>
       </div>

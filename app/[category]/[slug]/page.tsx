@@ -1,6 +1,6 @@
 import { AboutSection } from "@/components/shared/about-section";
 import { Footer } from "@/components/shared/footer";
-import { ProductDetails } from "@/components/shared/product-details";
+import { ProductDetails } from "@/components/products/product-details";
 import { SectionNav } from "@/components/shared/section-nav";
 import { GoBackLink } from "@/components/ui/back-link";
 import { Nav } from "@/components/shared/nav";

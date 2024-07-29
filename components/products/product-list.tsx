@@ -2,7 +2,7 @@
 
 import { Product } from "@/types/product-type";
 
-import { ProductCard } from "@/components/ui/product-card";
+import { ProductCard } from "@/components/products/product-card";
 
 interface ProductListProps {
   products: Product[];

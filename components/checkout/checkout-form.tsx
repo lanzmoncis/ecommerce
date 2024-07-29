@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { PayModal } from "@/components/modals/payment-modal";
 
 import { useFromStore } from "@/hooks/use-from-store";
 import { useCartTotals } from "@/hooks/use-cart-total";
@@ -26,10 +27,10 @@ import { useCartStore } from "@/store/cart-store";
 import { SHIPPING_FEE } from "@/constants/fees";
 
 import { formSchema } from "@/schema/form-schema";
-import { PayModal } from "../modals/payment-modal";
 
 export const CheckOutForm = () => {
   const [open, setOpen] = useState(false);
+
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const clearCart = useCartStore((state) => state.clearCart);
   const { total, tax, grandTotal } = useCartTotals();
@@ -37,18 +38,28 @@ export const CheckOutForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      zipCode: "",
+      city: "",
+      country: "",
       type: "eMoney",
+      eMoneyNumber: "",
+      eMoneyPin: "",
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
-    clearCart();
+    setOpen(true);
+    // clearCart();
   }
 
   return (
     <>
-      <PayModal isOpen={open} onClose={() => setOpen(false)} />
+      <PayModal isOpen={open} />
       <div className="max-w-[327px] md:max-w-[689px] lg:max-w-[1110px] mx-auto mb-24">
         <Form {...form}>
           <form
@@ -292,7 +303,7 @@ export const CheckOutForm = () => {
                     $ {grandTotal?.toLocaleString("en-US")}
                   </div>
                 </div>
-                <Button className="w-full" onClick={() => setOpen(true)}>
+                <Button className="w-full" type="submit">
                   Continue and Pay
                 </Button>
               </div>

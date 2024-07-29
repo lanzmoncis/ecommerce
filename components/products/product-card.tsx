@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
+import { Button } from "@/components/ui/button";
+
 import { Product } from "@/types/product-type";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 import { cn } from "@/lib/utils";
-
-import { Button } from "./button";
 
 interface ProductCardProps {
   product: Product;

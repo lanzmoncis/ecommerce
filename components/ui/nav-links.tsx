@@ -1,13 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-
 export const NavLinks = () => {
-  const router = useRouter();
   return (
     <div className="text-black max-w-[327px] mx-auto flex flex-col items-center justify-center gap-20 w-full md:flex-row md:max-w-[689px] md:gap-3 xl:max-w-[1110px] xl:gap-7">
       <div className="h-[165px] bg-gray-dark flex flex-col justify-center gap-2 items-center w-full rounded-lg xl:h-[204px]">
@@ -22,15 +19,13 @@ export const NavLinks = () => {
           <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase xl:text-custom-md xl:tracking-[1.29px]">
             Headphones
           </h3>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="flex gap-1"
-            onClick={() => router.push("/headphones")}
+          <Link
+            href={"/headphones"}
+            className="flex gap-1 items-center min-w-[57.32px] h-[18px] uppercase font-bold text-[13px] tracking-[1px] text-gray-500 hover:text-orange"
           >
             <div>shop</div>
             <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
-          </Button>
+          </Link>
         </div>
       </div>
 
@@ -46,15 +41,13 @@ export const NavLinks = () => {
           <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase xl:text-custom-md xl:tracking-[1.29px]">
             Speakers
           </h3>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="flex gap-1"
-            onClick={() => router.push("/speakers")}
+          <Link
+            href={"/speakers"}
+            className="flex gap-1 items-center min-w-[57.32px] h-[18px] uppercase font-bold text-[13px] tracking-[1px] text-gray-500 hover:text-orange"
           >
             <div>shop</div>
             <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
-          </Button>
+          </Link>
         </div>
       </div>
 
@@ -70,15 +63,13 @@ export const NavLinks = () => {
           <h3 className="text-custom-base font-bold tracking-[1.07px] uppercase xl:text-custom-md xl:tracking-[1.29px]">
             Earphones
           </h3>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="flex gap-1"
-            onClick={() => router.push("/earphones")}
+          <Link
+            href={"/earphones"}
+            className="flex gap-1 items-center min-w-[57.32px] h-[18px] uppercase font-bold text-[13px] tracking-[1px] text-gray-500 hover:text-orange"
           >
             <div>shop</div>
             <ChevronRight size={20} strokeWidth={2.25} color="#D87D4A" />
-          </Button>
+          </Link>
         </div>
       </div>
     </div>

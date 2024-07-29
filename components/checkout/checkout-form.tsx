@@ -52,9 +52,8 @@ export const CheckOutForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    // console.log(values);
     setOpen(true);
-    // clearCart();
   }
 
   return (
@@ -78,11 +77,13 @@ export const CheckOutForm = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>Name</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="Alexie Ward" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -91,11 +92,13 @@ export const CheckOutForm = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email Address</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>Email Address</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="alexie@gmail.com" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -104,11 +107,13 @@ export const CheckOutForm = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="+1 202-555-0136" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -125,14 +130,16 @@ export const CheckOutForm = () => {
                     name="address"
                     render={({ field }) => (
                       <FormItem className="md:col-span-2">
-                        <FormLabel>Your Address</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>Your Address</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input
                             placeholder="1137 Williams Avenue"
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -141,11 +148,13 @@ export const CheckOutForm = () => {
                     name="zipCode"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>ZIP Code</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>ZIP Code</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="10001" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -154,11 +163,13 @@ export const CheckOutForm = () => {
                     name="city"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>City</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>City</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="New York" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -167,11 +178,13 @@ export const CheckOutForm = () => {
                     name="country"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Country</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>Country</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="United States" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -188,7 +201,10 @@ export const CheckOutForm = () => {
                     name="type"
                     render={({ field }) => (
                       <FormItem className="space-y-3 md:grid md:grid-cols-2 col-span-2 md:space-y-0 md:gap-4">
-                        <FormLabel>Payment Method</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>Payment Method</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <RadioGroup
                             onValueChange={field.onChange}
@@ -213,7 +229,6 @@ export const CheckOutForm = () => {
                             </FormItem>
                           </RadioGroup>
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -222,11 +237,13 @@ export const CheckOutForm = () => {
                     name="eMoneyNumber"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>e-Money Number</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>e-Money Number</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="238521993" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />
@@ -235,11 +252,13 @@ export const CheckOutForm = () => {
                     name="eMoneyPin"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>e-Money PIN</FormLabel>
+                        <div className="flex justify-between">
+                          <FormLabel>e-Money PIN</FormLabel>
+                          <FormMessage />
+                        </div>
                         <FormControl>
                           <Input placeholder="6891" {...field} />
                         </FormControl>
-                        <FormMessage />
                       </FormItem>
                     )}
                   />

@@ -2,8 +2,8 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 
 import { Separator } from "@/components/ui/separator";
@@ -22,7 +22,13 @@ export const PayModal: React.FC<PayModalProps> = ({ isOpen }) => {
   const router = useRouter();
 
   const cart = useFromStore(useCartStore, (state) => state.cart);
+  const clearCart = useCartStore((state) => state.clearCart);
   const { total } = useCartTotals();
+
+  const confirmPay = () => {
+    clearCart();
+    router.push("/");
+  };
 
   return (
     <Dialog.Root open={isOpen}>
@@ -91,7 +97,7 @@ export const PayModal: React.FC<PayModalProps> = ({ isOpen }) => {
                 </div>
               </div>
             </div>
-            <Button className="w-full" onClick={() => router.push("/")}>
+            <Button className="w-full" onClick={confirmPay}>
               Back to home
             </Button>
           </div>

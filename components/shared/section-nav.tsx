@@ -1,6 +1,6 @@
 "use client";
 
-import { NavLinks } from "../ui/nav-links";
+import { NavLinks } from "@/components/ui/nav-links";
 
 export const SectionNav = () => {
   return (

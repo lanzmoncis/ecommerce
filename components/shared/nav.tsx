@@ -15,6 +15,8 @@ import { useCartStore } from "@/store/cart-store";
 
 import { routes } from "@/lib/links";
 
+import { cn } from "@/lib/utils";
+
 export const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -73,7 +75,27 @@ export const Nav = () => {
         </div>
       </div>
 
-      {!isExtraLargeScreens && navOpen && (
+      {!isExtraLargeScreens && (
+        <>
+          {navOpen && (
+            <div
+              className="fixed h-full bg-black/40 z-30 w-full inset-0"
+              onClick={() => setNavOpen(false)}
+            ></div>
+          )}
+          <div
+            className={cn(
+              "absolute w-full py-20 pb-10 bg-white z-50 left-0 rounded-b-lg transition-transform duration-300",
+              navOpen ? "translate-y-0 top-[90px]" : "-translate-y-full top-0"
+            )}
+          >
+            <NavLinks />
+          </div>
+        </>
+      )}
+
+      {/* RESPONSIVE NAVLINKS WITHOUT ANIMATION */}
+      {/* {!isExtraLargeScreens && navOpen && (
         <>
           <div className="fixed h-full bg-black/40 z-30 w-full inset-0"></div>
           <div className="absolute w-full bg-white h-[750px] md:h-[340px] z-50 rounded-b-lg">
@@ -82,7 +104,7 @@ export const Nav = () => {
             </div>
           </div>
         </>
-      )}
+      )} */}
     </>
   );
 };

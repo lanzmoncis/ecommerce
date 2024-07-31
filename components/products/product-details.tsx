@@ -7,7 +7,7 @@ import { Plus, Minus } from "lucide-react";
 
 import { Product } from "@/types/product-type";
 
-import { useCartStore } from "@/store/cart-store";
+import { useCartStore } from "@/store/use-cart-store";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
 

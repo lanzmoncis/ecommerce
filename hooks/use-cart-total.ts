@@ -1,4 +1,5 @@
-import { useCartStore } from "@/store/cart-store";
+import { useCartStore } from "@/store/use-cart-store";
+
 import { TAX_RATE, SHIPPING_FEE } from "@/constants/fees";
 
 export const useCartTotals = () => {

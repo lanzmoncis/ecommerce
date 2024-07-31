@@ -9,7 +9,7 @@ import { Minus, Plus, ShoppingCart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-import { useCartStore } from "@/store/cart-store";
+import { useCartStore } from "@/store/use-cart-store";
 
 import { useFromStore } from "@/hooks/use-from-store";
 

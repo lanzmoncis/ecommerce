@@ -11,7 +11,7 @@ import { CartModal } from "@/components/modals/cart-modal";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useFromStore } from "@/hooks/use-from-store";
 
-import { useCartStore } from "@/store/cart-store";
+import { useCartStore } from "@/store/use-cart-store";
 
 import { routes } from "@/lib/links";
 

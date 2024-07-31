@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { useFromStore } from "@/hooks/use-from-store";
 import { useCartTotals } from "@/hooks/use-cart-total";
 
-import { useCartStore } from "@/store/cart-store";
+import { useCartStore } from "@/store/use-cart-store";
 
 interface PayModalProps {
   isOpen: boolean;

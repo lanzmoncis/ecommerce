@@ -1,24 +1,9 @@
 import { promises as fs } from "fs";
-import path from "path";
-import getConfig from "next/config";
 
 import { Product } from "@/types/product-type";
 
-const { serverRuntimeConfig } = getConfig();
-
 export const readData = async (): Promise<Product[]> => {
-  // const file = await fs.readFile(process.cwd() + "/data/data.json", "utf8");
-  // const file = await fs.readFile(
-  //   path.resolve("/ecommerce/data/data.json"),
-  //   "utf-8"
-  // );
-  // return JSON.parse(file).products;
-  const dataPath = path.join(
-    serverRuntimeConfig.PROJECT_ROOT,
-    "data",
-    "data.json"
-  );
-  const file = await fs.readFile(dataPath, "utf-8");
+  const file = await fs.readFile(process.cwd() + "/data/data.json", "utf8");
   return JSON.parse(file).products;
 };
 

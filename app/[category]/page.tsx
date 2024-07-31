@@ -2,7 +2,6 @@ import { SectionNav } from "@/components/shared/section-nav";
 import { Footer } from "@/components/shared/footer";
 import { AboutSection } from "@/components/shared/about-section";
 import { ProductList } from "@/components/products/product-list";
-
 import { Nav } from "@/components/shared/nav";
 
 import { getProductsByCategory } from "@/lib/products";

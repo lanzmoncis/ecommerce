@@ -54,7 +54,7 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
             <div>
               {cart?.length === 0 ? (
                 <div className="flex flex-col justify-center items-center gap-6 py-10 h-full w-full">
-                  <div className="text-gray-500 text-custom-md">
+                  <div className="text-gray-extraDark text-custom-md">
                     Your cart is empty
                   </div>
                   <ShoppingCart size={48} />
@@ -66,7 +66,7 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                       cart ({cart?.length})
                     </div>
                     <button
-                      className="text-gray-500 underline hover:text-orange focus:outline-none"
+                      className="text-gray-extraDark underline hover:text-orange focus:outline-none"
                       onClick={() => clearCart()}
                     >
                       Remove all
@@ -117,7 +117,9 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                   </div>
                   <div className="w-full space-y-7">
                     <div className="flex justify-between w-full uppercase">
-                      <div className="text-gray-500">Total</div>
+                      <div className="text-gray-extraDark text-custom-base">
+                        Total
+                      </div>
                       <div className="text-custom-md tacking-[0]">
                         $ {total?.toLocaleString("en-US")}
                       </div>

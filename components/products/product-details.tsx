@@ -68,7 +68,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           <h2 className="text-custom-xl uppercase xl:text-custom-3xl">
             {product.name}
           </h2>
-          <p className="text-custom-base text-gray-500">
+          <p className="text-custom-base text-gray-extraDark">
             {product.description}
           </p>
           <div className="text-custom-md">
@@ -105,7 +105,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             Features
           </h3>
           {featureParagraphs.map((paragraph, index) => (
-            <p key={index} className="text-custom-base text-gray-500">
+            <p key={index} className="text-custom-base text-gray-extraDark">
               {paragraph}
             </p>
           ))}
@@ -120,7 +120,9 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
               <li key={index}>
                 <div className="flex gap-6">
                   <p className="text-orange">{items.quantity}x</p>
-                  <p className="text-custom-base text-gray-500">{items.item}</p>
+                  <p className="text-custom-base text-gray-extraDark">
+                    {items.item}
+                  </p>
                 </div>
               </li>
             ))}

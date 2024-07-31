@@ -32,7 +32,6 @@ export const CheckOutForm = () => {
   const [open, setOpen] = useState(false);
 
   const cart = useFromStore(useCartStore, (state) => state.cart);
-  const clearCart = useCartStore((state) => state.clearCart);
   const { total, tax, grandTotal } = useCartTotals();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -50,6 +49,8 @@ export const CheckOutForm = () => {
       eMoneyPin: "",
     },
   });
+
+  const watchPaymentType = form.watch("type");
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // console.log(values);
@@ -232,36 +233,60 @@ export const CheckOutForm = () => {
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="eMoneyNumber"
-                    render={({ field }) => (
-                      <FormItem>
-                        <div className="flex justify-between">
-                          <FormLabel>e-Money Number</FormLabel>
-                          <FormMessage />
+                  {watchPaymentType === "eMoney" && (
+                    <>
+                      <FormField
+                        control={form.control}
+                        name="eMoneyNumber"
+                        render={({ field }) => (
+                          <FormItem>
+                            <div className="flex justify-between">
+                              <FormLabel>e-Money Number</FormLabel>
+                              <FormMessage />
+                            </div>
+                            <FormControl>
+                              <Input placeholder="238521993" {...field} />
+                            </FormControl>
+                          </FormItem>
+                        )}
+                      />
+                      <FormField
+                        control={form.control}
+                        name="eMoneyPin"
+                        render={({ field }) => (
+                          <FormItem>
+                            <div className="flex justify-between">
+                              <FormLabel>e-Money PIN</FormLabel>
+                              <FormMessage />
+                            </div>
+                            <FormControl>
+                              <Input placeholder="6891" {...field} />
+                            </FormControl>
+                          </FormItem>
+                        )}
+                      />
+                    </>
+                  )}
+                  {watchPaymentType === "cashOnDelivery" && (
+                    <div className="col-span-2">
+                      <div className="flex justify-between items-center gap-6 md:gap-4">
+                        <div className="w-full md:w-1/5">
+                          <Image
+                            src={"/images/checkout/icon-cash-on-delivery.svg"}
+                            alt="Cash on delivery icon"
+                            width={48}
+                            height={48}
+                          />
                         </div>
-                        <FormControl>
-                          <Input placeholder="238521993" {...field} />
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="eMoneyPin"
-                    render={({ field }) => (
-                      <FormItem>
-                        <div className="flex justify-between">
-                          <FormLabel>e-Money PIN</FormLabel>
-                          <FormMessage />
-                        </div>
-                        <FormControl>
-                          <Input placeholder="6891" {...field} />
-                        </FormControl>
-                      </FormItem>
-                    )}
-                  />
+                        <p className="text-custom-base text-gray-extraDark">
+                          The ‘Cash on Delivery’ option enables you to pay in
+                          cash when our delivery courier arrives at your
+                          residence. Just make sure your address is correct so
+                          that your order will not be cancelled.
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -284,12 +309,12 @@ export const CheckOutForm = () => {
                       />
                       <div className="text-custom-base uppercase font-semibold">
                         <div className="mb-[1px]">{item.shortName}</div>
-                        <div className="text-gray-500">
+                        <div className="text-gray-extraDark">
                           $ {item.price.toLocaleString("en-US")}
                         </div>
                       </div>
                     </div>
-                    <div className="text-gray-500 text-custom-base font-semibold">
+                    <div className="text-gray-extraDark text-custom-base font-semibold">
                       x{item.cartQuantity}
                     </div>
                   </div>
@@ -298,26 +323,34 @@ export const CheckOutForm = () => {
               <div className="w-full space-y-6">
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between w-full uppercase">
-                    <div className="text-gray-500">Total</div>
+                    <div className="text-gray-extraDark text-custom-base">
+                      Total
+                    </div>
                     <div className="text-custom-md tracking-[0]">
                       $ {total?.toLocaleString("en-US")}
                     </div>
                   </div>
                   <div className="flex justify-between w-full uppercase">
-                    <div className="text-gray-500">Shipping</div>
+                    <div className="text-gray-extraDark text-custom-base">
+                      Shipping
+                    </div>
                     <div className="text-custom-md tracking-[0]">
                       $ {SHIPPING_FEE?.toLocaleString("en-US")}
                     </div>
                   </div>
                   <div className="flex justify-between w-full uppercase">
-                    <div className="text-gray-500">Vat included</div>
+                    <div className="text-gray-extraDark text-custom-base">
+                      Vat included
+                    </div>
                     <div className="text-custom-md tracking-[0]">
                       $ {tax?.toLocaleString("en-US")}
                     </div>
                   </div>
                 </div>
                 <div className="flex justify-between w-full uppercase">
-                  <div className="text-gray-500">Grand Total</div>
+                  <div className="text-gray-extraDark text-custom-base">
+                    Grand Total
+                  </div>
                   <div className="text-custom-md tracking-[0] text-orange">
                     $ {grandTotal?.toLocaleString("en-US")}
                   </div>

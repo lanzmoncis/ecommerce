@@ -60,7 +60,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, index }) => {
         </h2>
         <p
           className={cn(
-            "text-custom-base text-gray-500 text-center xl:px-0 xl:text-left xl:w-5/6"
+            "text-custom-base text-gray-extraDark text-center xl:px-0 xl:text-left xl:w-5/6"
           )}
         >
           {product.description}

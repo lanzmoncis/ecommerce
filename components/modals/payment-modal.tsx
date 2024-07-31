@@ -52,7 +52,7 @@ export const PayModal: React.FC<PayModalProps> = ({ isOpen }) => {
                 <p className="text-custom-lg uppercase">
                   Thank you <br /> for your order
                 </p>
-                <p className="text-gray-500 text-custom-base">
+                <p className="text-gray-extraDark text-custom-base">
                   You will receive an email confirmation shortly
                 </p>
               </div>
@@ -70,25 +70,27 @@ export const PayModal: React.FC<PayModalProps> = ({ isOpen }) => {
                             className="rounded-lg"
                           />
                           <div className="text-custom-base uppercase font-semibold">
-                            <div className="mb-[1px]">{cart[0].shortName}</div>
-                            <div className="text-gray-500">
+                            <div className="mb-[1px] text-custom-base">
+                              {cart[0].shortName}
+                            </div>
+                            <div className="text-gray-extraDark">
                               $ {cart[0].price.toLocaleString("en-US")}
                             </div>
                           </div>
                         </div>
-                        <div className="text-gray-500 text-custom-base font-semibold">
+                        <div className="text-gray-extraDark text-custom-base font-semibold">
                           x{cart[0].cartQuantity}
                         </div>
                       </div>
                       <Separator />
-                      <div className="text-center text-gray-500 text-[12px] tracking-[-0.21px]">
+                      <div className="text-center text-gray-extraDark text-[12px] font-bold tracking-[-0.21px]">
                         and {cart.length} other items(s)
                       </div>
                     </>
                   )}
                 </div>
                 <div className="p-6 bg-black space-y-2 rounded-b-lg md:place-content-center">
-                  <div className="uppercase text-gray-500 text-custom-base">
+                  <div className="uppercase text-gray-extraDark text-custom-base">
                     Grand total
                   </div>
                   <div className="text-white text-custom-md font-bold">

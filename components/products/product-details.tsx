@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { toast } from "sonner";
 
 import { Product } from "@/types/product-type";
 
@@ -41,6 +42,11 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   const handleDecreaseQuantity = () => {
     setQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
+  };
+
+  const handleAddToCart = (product: Product, quantity: number) => {
+    addToCart(product, quantity);
+    toast(`${product.name} is added to cart`);
   };
 
   return (
@@ -92,7 +98,7 @@ export const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
                 onClick={handleIncreaseQuantity}
               />
             </div>
-            <Button onClick={() => addToCart(product, quantity)}>
+            <Button onClick={() => handleAddToCart(product, quantity)}>
               Add to cart
             </Button>
           </div>

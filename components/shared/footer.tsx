@@ -12,7 +12,8 @@ import { routes } from "@/lib/links";
 export const Footer = () => {
   return (
     <footer className="bg-black">
-      <div className="max-w-[327px] flex flex-col items-center mx-auto gap-10 py-10 md:items-start md:max-w-[689px] xl:max-w-[1110px]">
+      <div className="max-w-[327px] flex flex-col items-center mx-auto gap-10 py-10 md:items-start md:max-w-[689px] xl:max-w-[1110px] relative">
+        <div className="border-2 border-orange w-[104px] absolute top-0"></div>
         <div className="w-full flex flex-col items-center md:items-start xl:flex-row xl:justify-between xl:items-center gap-10">
           <Image
             src="/images/shared/desktop/logo.svg"

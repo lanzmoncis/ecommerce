@@ -53,7 +53,7 @@ export const CheckOutForm = () => {
   const watchPaymentType = form.watch("type");
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // console.log(values);
+    // *you can save the values to a database
     setOpen(true);
   }
 
@@ -216,7 +216,7 @@ export const CheckOutForm = () => {
                               <FormControl>
                                 <RadioGroupItem value="eMoney" />
                               </FormControl>
-                              <FormLabel className="text-sm font-medium">
+                              <FormLabel className="font-medium">
                                 e-Money
                               </FormLabel>
                             </FormItem>
@@ -224,7 +224,7 @@ export const CheckOutForm = () => {
                               <FormControl>
                                 <RadioGroupItem value="cashOnDelivery" />
                               </FormControl>
-                              <FormLabel className="font-sm font-medium">
+                              <FormLabel className="font-medium">
                                 Cash on Delivery
                               </FormLabel>
                             </FormItem>

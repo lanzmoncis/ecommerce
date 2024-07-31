@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope as FontSans } from "next/font/google";
 
+import { Toaster } from "@/components/ui/sonner";
+
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -21,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("font-sans antialiased", fontSans.variable)}>
         <main>{children}</main>
+        <Toaster />
       </body>
     </html>
   );

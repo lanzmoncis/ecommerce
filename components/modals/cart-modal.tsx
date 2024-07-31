@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
+import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 
@@ -39,6 +40,11 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
+  const handleClearCart = () => {
+    clearCart();
+    toast("Removed cart item(s)");
+  };
+
   return (
     <>
       <Dialog.Root open={isOpen} onOpenChange={onChange}>
@@ -57,7 +63,7 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                   <div className="text-gray-extraDark text-custom-md">
                     Your cart is empty
                   </div>
-                  <ShoppingCart size={48} />
+                  <ShoppingCart size={48} color="#979797" />
                 </div>
               ) : (
                 <div className="flex flex-col justify-center items-center py-8 px-6 space-y-8">
@@ -67,7 +73,7 @@ export const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
                     </div>
                     <button
                       className="text-gray-extraDark underline hover:text-orange focus:outline-none"
-                      onClick={() => clearCart()}
+                      onClick={handleClearCart}
                     >
                       Remove all
                     </button>

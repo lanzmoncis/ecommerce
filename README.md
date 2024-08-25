@@ -1,6 +1,6 @@
 # <a href="https://ecommerce-rust-rho.vercel.app/" target="_blank">Audiophile</a>
 
-![screenshot](https://github.com/user-attachments/assets/98457d2d-61b1-4846-8a7e-db7ebbdf9f13)
+![preview](https://github.com/user-attachments/assets/311ad0e3-b745-4747-8714-31a25bba9aea)
 
 ## Description
 
